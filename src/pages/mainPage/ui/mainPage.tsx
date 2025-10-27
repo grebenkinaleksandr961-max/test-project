@@ -15,20 +15,16 @@ export default function MainPage() {
   const [searchTerm, setSearchTerm] = useState('')
 
   useEffect(() => {
-    dispatch(loadArticles())
-  }, [dispatch])
-
-  useEffect(() => {
     const delay = setTimeout(() => {
       if (searchTerm.trim()) {
         dispatch(searchArticlesThunk(searchTerm))
-      } else {
+      } else if (articles.length === 0) {
         dispatch(loadArticles())
       }
     }, 800)
 
     return () => clearTimeout(delay)
-  }, [searchTerm, dispatch])
+  }, [searchTerm, dispatch, articles.length])
 
   return (
     <main className={styles.mainBlock}>
