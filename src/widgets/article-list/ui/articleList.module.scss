@@ -1,0 +1,18 @@
+.articleCard {
+  max-width: 560px;
+}
+
+.articleCardFirst {
+  max-width: 1140px;
+}
+
+.articlesSection {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.articlesSection > :first-child {
+  grid-column: 1 / -1;
+}

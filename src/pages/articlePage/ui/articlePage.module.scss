@@ -1,0 +1,40 @@
+.articlePageWrapper {
+  margin: 64px auto;
+  max-width: 1140px;
+}
+.topBar {
+  display: flex;
+  justify-content: space-between;
+}
+.backButtonBlock {
+  justify-content: space-between;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.returnParagraph {
+  margin-left: 6px;
+}
+
+.articleContent {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+.articleContentHeader {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  text-align: center;
+}
+
+.articleText {
+  max-width: 850px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+}

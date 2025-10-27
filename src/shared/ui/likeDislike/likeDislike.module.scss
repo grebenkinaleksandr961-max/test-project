@@ -1,0 +1,27 @@
+.likeDislikeWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.likeWrapper,
+.dislikeWrapper {
+  display: flex;
+  align-items: center;
+  color: #949298;
+}
+
+.activeLike {
+  color: #219653;
+}
+
+.activeDislike {
+  color: #eb5757;
+}
+
+.counter {
+  margin-left: 8px;
+  font-size: 14px;
+  line-height: 18px;
+}

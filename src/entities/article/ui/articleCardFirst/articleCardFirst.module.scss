@@ -1,0 +1,42 @@
+.articleTitle {
+  color: var(--black);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.titleLikeWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.firstArticleParagraph {
+  color: var(--black);
+  margin-top: 32px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.reactionButtonWrapper {
+  display: flex;
+  margin-top: 32px;
+}
+.articleCardWrapper {
+  border-radius: 12px;
+  box-shadow:
+    0px 10px 20px 0px rgba(0, 0, 0, 0.04),
+    0px 2px 6px 0px rgba(0, 0, 0, 0.04),
+    0px 0px 1px 0px rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 1);
+}
+.textContentWrapper {
+  margin: 24px 16px 0px 16px;
+  padding-bottom: 32px;
+}
+
+.mlauto {
+  margin-left: auto;
+}
