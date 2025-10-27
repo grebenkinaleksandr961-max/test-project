@@ -67,41 +67,42 @@ export const articleSlice = createSlice({
         state.isLoading = true
         state.error = null
       })
-
       .addCase(loadArticles.fulfilled, (state, action) => {
         state.isLoading = false
-
         const updated = action.payload.map((article) => {
           const existing = state.articles.find((a) => a.id === article.id)
-
           return existing
             ? existing
             : {
                 ...article,
                 likes: Math.floor(Math.random() * 50),
                 dislikes: Math.floor(Math.random() * 50),
-                image: IMAGES[Math.floor(Math.random() * IMAGES.length)], // <-- рандом картинка
+                image: IMAGES[Math.floor(Math.random() * IMAGES.length)],
               }
         })
-
         state.articles = updated
       })
-
       .addCase(loadArticles.rejected, (state, action) => {
         state.isLoading = false
         state.error = (action.payload as string) ?? 'Ошибка загрузки постов'
       })
+
       .addCase(searchArticlesThunk.pending, (state) => {
         state.isLoading = true
       })
       .addCase(searchArticlesThunk.fulfilled, (state, action) => {
         state.isLoading = false
-        state.articles = action.payload.map((article) => ({
-          ...article,
-          likes: Math.floor(Math.random() * 50),
-          dislikes: Math.floor(Math.random() * 50),
-          image: IMAGES[Math.floor(Math.random() * IMAGES.length)],
-        }))
+        state.articles = action.payload.map((article) => {
+          const existing = state.articles.find((a) => a.id === article.id)
+          return existing
+            ? existing
+            : {
+                ...article,
+                likes: Math.floor(Math.random() * 50),
+                dislikes: Math.floor(Math.random() * 50),
+                image: IMAGES[Math.floor(Math.random() * IMAGES.length)],
+              }
+        })
       })
       .addCase(searchArticlesThunk.rejected, (state, action) => {
         state.isLoading = false
@@ -110,5 +111,5 @@ export const articleSlice = createSlice({
   },
 })
 
-export const { toggleDislike, toggleLike } = articleSlice.actions
+export const { toggleLike, toggleDislike } = articleSlice.actions
 export const articleReducer = articleSlice.reducer

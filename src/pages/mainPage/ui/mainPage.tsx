@@ -24,7 +24,7 @@ export default function MainPage() {
     }, 800)
 
     return () => clearTimeout(delay)
-  }, [searchTerm, dispatch, articles.length])
+  }, [searchTerm, dispatch])
 
   return (
     <main className={styles.mainBlock}>
